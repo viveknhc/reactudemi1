@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import Color from "./Components/Color"
 
 function App() {
   const [advice, setAdvice] = useState("")
@@ -18,13 +19,18 @@ function App() {
       <h1>Advice App</h1>
       <p>Click the button then you can get the advice</p>
       <button onClick={getData}>Click Here</button>
-
-      <h3>{count}:{advice}</h3>
+      <Color></Color>
+      <Display count={count} advice={advice}></Display>
 
     </div>
   )
 
 }
-
 export default App
+
+function Display(props) {
+  return (
+    <h3>{props.count}:{props.advice}</h3>
+  )
+}
 
